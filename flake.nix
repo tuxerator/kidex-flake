@@ -28,7 +28,7 @@
 	};
       };
 
-      flake.nixosModules.default = { pkgs, ... }: {
+      flake.homeManagerModules.default = { pkgs, ... }: {
         imports = [ ./hm-module.nix ];
         services.kidex.package = withSystem pkgs.stdenv.hostPlatform.system ({ config, ... }:
           config.packages.default
